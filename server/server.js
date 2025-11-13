@@ -262,8 +262,8 @@ io.on('connection', (socket) => {
         broadcastWaitingRoomUsers();
     });
 });
-
-app.get("/*", (req, res) => {
+//Express 5에서는 * 뒤에 이름을 붙여야 한다고 한다..
+app.get("/*splat", (req, res) => {
     res.sendFile(path.join(clientPath, 'index.html'));
 })
 
