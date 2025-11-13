@@ -15,7 +15,7 @@ import {
     Button,
     TextField,
     Divider,
-    IconButton, ListItemIcon
+    ListItemIcon
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
@@ -239,7 +239,7 @@ function RoomManager() {
 
 
 // --- 3. WaitingRoom 메인 컴포넌트 (레이아웃) ---
-function WaitingRoom({ username, theme }) {
+function WaitingRoom({ username }) {
     const [waitingRoomUsers, setWaitingRoomUsers] = useState([]);
 
     // 대기실 사용자 목록 소켓 (기존과 동일)

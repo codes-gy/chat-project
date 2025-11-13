@@ -6,7 +6,6 @@ import { socket } from './socket';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import AppBar from '@mui/material/AppBar';
@@ -19,12 +18,7 @@ import LoginScreen from "./LoginScreen.jsx";
 import {IconButton} from "@mui/material";
 import Brightness4Icon from '@mui/icons-material/Brightness4'; // 다크 모드 아이콘
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-// [MUI] 앱 전체에 적용할 다크 테마 생성
-const darkTheme = createTheme({
-    palette: {
-        mode: 'light',
-    },
-});
+
 
 function App() {
     const [currentRoom, setCurrentRoom] = useState(null);
