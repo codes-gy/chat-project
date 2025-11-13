@@ -2,9 +2,14 @@
 import express from 'express';
 import http from 'http';
 import { Server } from "socket.io";
+import * as path from "node:path";
 
 const app = express();
 const server = http.createServer(app);
+
+
+const clientPath = path.join(__dirname, '..', 'frontend', 'dist');
+app.use(express.static(clientPath));
 
 const io = new Server(server, {
     cors: {
@@ -12,6 +17,10 @@ const io = new Server(server, {
         methods: ["GET", "POST"]
     }
 });
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(clientPath, 'index.html'));
+})
 
 const PORT = 4000;
 
