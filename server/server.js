@@ -20,7 +20,7 @@ const io = new Server(server, {
     }
 });
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // ----- 상태 관리 -----
 let rooms = {}; // { roomName: { password: '...', users: [socketId, ...] } }
