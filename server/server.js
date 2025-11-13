@@ -20,10 +20,6 @@ const io = new Server(server, {
     }
 });
 
-app.get("/*", (req, res) => {
-    res.sendFile(path.join(clientPath, 'index.html'));
-})
-
 const PORT = 4000;
 
 // ----- 상태 관리 -----
@@ -265,6 +261,10 @@ io.on('connection', (socket) => {
         // [추가] 새 사용자가 대기실에 입장했으므로 목록 업데이트
         broadcastWaitingRoomUsers();
     });
+});
+
+app.get("/*", (req, res) => {
+    res.sendFile(path.join(clientPath, 'index.html'));
 })
 
 server.listen(PORT, () => {
