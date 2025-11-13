@@ -20,7 +20,7 @@ const io = new Server(server, {
     }
 });
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(clientPath, 'index.html'));
 })
 
